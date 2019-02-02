@@ -1,0 +1,9 @@
+function setup() {
+size(640,360);
+colorMode(HSB,height,height,height);
+nostroke
+}
+
+function draw() {
+  
+}
