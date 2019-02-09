@@ -1,0 +1,31 @@
+var cols, rows;
+var scl = 20;
+var w = 1600;
+var h = 1500;
+
+var flying;
+
+var terrain = [];
+
+function setup() {
+    createCanvas(300, 300, WEBGL);
+    cols = w / scl;
+    rows = h / scl;
+
+}
+
+function draw() {
+    flying += 0.01;
+    var yoff = flying;
+    for (var y = 0; y < rows; y++) {
+        var xoff = 0;
+        for (var x = 0; x < cols; x++) {
+            var tmp = [];
+            tmp[x] =  map(noise(xoff, yoff), 0, 1, -100, 100);
+            xoff += 0.08;
+        }
+        terrain[y]= tmp;
+        yoff += 0.08;
+    }
+    
+}
