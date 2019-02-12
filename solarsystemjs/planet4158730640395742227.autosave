@@ -1,0 +1,19 @@
+function Planet(r, d, a) {
+    this.r = r*200;
+    this.a = a;
+    this.d = d;
+    this.angle = 0;
+
+    this.show = function () {
+        push();
+        rotate(this.angle);
+        translate(d, 0);
+        ellipse(0, 0, r*2, r*2);
+        pop();
+    }
+
+    this.move = function () {
+        this.angle += this.a;
+    }
+
+}
